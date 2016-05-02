@@ -35,24 +35,6 @@ class User implements UserInterface, Serializable
     private $role;
 
     /**
-     * User constructor.
-     * @param int $id
-     * @param string $username
-     * @param string $name
-     * @param string $password
-     * @param string $role
-     */
-    public function __construct($id, $username, $name, $password, $role)
-    {
-        $this->id = $id;
-        $this->username = $username;
-        $this->name = $name;
-        $this->password = $password;
-        $this->role = $role;
-    }
-
-
-    /**
      * Returns the roles granted to the user.
      *
      * <code>
