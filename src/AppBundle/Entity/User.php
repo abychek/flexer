@@ -30,7 +30,7 @@ class User implements UserInterface, Serializable
     private $password;
 
     /**
-     * @var string
+     * @var array
      */
     private $role;
 
@@ -50,7 +50,7 @@ class User implements UserInterface, Serializable
      *
      * @return (Role|string)[] The user roles
      */
-    public function getRoles() : string
+    public function getRoles() : array
     {
         return $this->role;
     }
@@ -188,25 +188,29 @@ class User implements UserInterface, Serializable
     /**
      * Set role
      *
-     * @param string $role
+     * @param string $roles
      *
      * @return User
      */
-    public function setRole($role)
+    public function setRoles($roles)
     {
-        $this->role = $role;
+        $this->role = $roles;
 
         return $this;
     }
 
     /**
-     * Get role
+     * Add role for user
      *
-     * @return string
+     * @param string $role
+     *
+     * @return $this
      */
-    public function getRole()
+    public function addRole($role)
     {
-        return $this->role;
+        $this->role[] = $role;
+
+        return $this;
     }
 
     /**
