@@ -1,9 +1,9 @@
 <?php
 
-namespace AppBundle\DataFixtures\ORM;
+namespace Authentication\RegistrationBundle\DataFixtures\ORM;
 
 
-use AppBundle\Entity\User;
+use Authentication\RegistrationBundle\Entity\User;
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 

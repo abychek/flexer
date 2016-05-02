@@ -54,6 +54,10 @@ class Version20160429164239 extends AbstractMigration
             'notnull'  => true,
         ]);
         $table->addForeignKeyConstraint('users', ['owner_id'], ['id']);
+        $table->addColumn('status', Type::STRING, [
+            'notnull'  => true,
+            'default'  => 'new'
+        ]);
 
         // Create Specials Table
         $table = $schema->createTable('specials');
@@ -81,6 +85,14 @@ class Version20160429164239 extends AbstractMigration
             'notnull'  => true,
         ]);
         $table->addForeignKeyConstraint('establishments', ['establishment_id'], ['id']);
+        $table->addColumn('count', Type::INTEGER, [
+            'notnull'  => true,
+            'default'  => 1
+        ]);
+        $table->addColumn('status', Type::STRING, [
+            'notnull'  => true,
+            'default'  => 'new'
+        ]);
 
         // Create Worker Table
         $table = $schema->createTable('workers');
