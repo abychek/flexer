@@ -21,7 +21,7 @@ class CustomerFixture implements FixtureInterface
         $user->setName('alexey');
         $user->setUsername('vivaldiy');
         $user->setPassword('q12we34r');
-        $user->setRole(['ROLE_CUSTOMER']);
+        $user->setRoles(['ROLE_CUSTOMER']);
 
         $manager->persist($user);
         $manager->flush();
