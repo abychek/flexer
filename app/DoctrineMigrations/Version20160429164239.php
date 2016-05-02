@@ -26,14 +26,14 @@ class Version20160429164239 extends AbstractMigration
         $table->addColumn('username', Type::STRING, [
             'notnull' => true,
         ]);
-        $table->addColumn('login', Type::STRING, [
+        $table->addColumn('name', Type::STRING, [
             'notnull'  => true,
             'unsigned' => true
         ]);
         $table->addColumn('password', Type::TEXT, [
             'notnull' => true
         ]);
-        $table->addColumn('role', Type::STRING, [
+        $table->addColumn('role', Type::SIMPLE_ARRAY, [
             'notnull' => true,
             'default' => 'USER_ROLE'
         ]);
