@@ -4,7 +4,7 @@ security:
 
     encoders:
         AppBundle\Entity\User:
-            algorithm: bcrypt
+            algorithm: plaintext
 
     # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
     providers:
@@ -26,10 +26,11 @@ security:
 
         main:
             anonymous: ~
-
-            pattern:    ^/customer-api/
             http_basic: ~
             provider: our_db_provider
+
+    access_control:
+        - { path: ^/admin, roles: ROLE_CUSTOMER }
             # activate different ways to authenticate
 
             # http_basic: ~
