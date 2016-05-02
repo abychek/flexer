@@ -1,0 +1,34 @@
+AppBundle\Entity\User:
+    properties:
+        username:
+            - Length:
+                min: 4
+                max: 20
+                minMessage: 'Your username must be at least {{ limit }} characters long'
+                maxMessage: 'Your username cannot be longer than {{ limit }} characters'
+
+            - Regex:
+                pattern: '/[0-9A-Za-z_-]/'
+                message: 'Your username must be 0-9, A-Z, a-z characters'
+
+        name:
+            - Length:
+                min: 2
+                max: 50
+                minMessage: 'Your name must be at least {{ limit }} characters long'
+                maxMessage: 'Your name cannot be longer than {{ limit }} characters'
+
+            - Regex:
+                pattern: '/[0-9A-Za-zА-Яа-яёЁ -]/'
+                message: 'Your name must be 0-9, A-Z, a-z, А-Я, а-я characters'
+
+        password:
+            - Length:
+                min: 8
+                max: 20
+                minMessage: 'Your password must be at least {{ limit }} characters long'
+                maxMessage: 'Your password cannot be longer than {{ limit }} characters'
+
+            - Regex:
+                pattern: '/[0-9A-Za-z]/'
+                message: 'Your password must be 0-9, A-Z, a-z characters'

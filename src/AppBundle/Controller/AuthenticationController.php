@@ -13,6 +13,8 @@ class AuthenticationController extends Controller
     public function registrationAction(Request $request)
     {
         try{
+            $validator = $this->get('validator');
+
             $username = $request->get('username');
             if($this->getDoctrine()->getRepository('AppBundle:User')->findBy(['username' => $username]) == []){
                 $user = new User();
@@ -20,6 +22,12 @@ class AuthenticationController extends Controller
                     ->setPassword($request->get('password'))
                     ->setName($request->get('name'))
                     ->setRoles(['ROLE_CUSTOMER']);
+
+                $validationErrors = $validator->validate($user);
+
+                if(count($validationErrors) > 0) {
+                    return new Response((string)$validationErrors, Response::HTTP_BAD_REQUEST);
+                }
 
                 $em = $this->getDoctrine()->getEntityManager();
                 $em->persist($user);
