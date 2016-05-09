@@ -1,3 +1,4 @@
-authentication_registration_homepage:
-    path:     /regitration
+registration:
+    path:     /registration
     defaults: { _controller: AuthenticationRegistrationBundle:Default:registration }
+    methods:  [POST]

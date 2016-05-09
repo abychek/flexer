@@ -16,7 +16,7 @@ class DefaultController extends Controller
             $validator = $this->get('validator');
 
             $username = $request->get('username');
-            if($this->getDoctrine()->getRepository('AppBundle:User')->findBy(['username' => $username]) == []){
+            if($this->getDoctrine()->getRepository('AuthenticationRegistrationBundle:User')->findBy(['username' => $username]) == []){
                 $user = new User();
                 $user->setUsername($username)
                     ->setPassword($request->get('password'))

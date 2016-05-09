@@ -1,0 +1,32 @@
+<?php
+
+namespace Api\EmployeeBundle\Entity;
+
+
+class Establishment
+{
+    /**
+     * @var int
+     */
+    private $id;
+
+    /**
+     * @var string
+     */
+    private $title;
+
+    /**
+     * @var string
+     */
+    private $description;
+
+    /**
+     * @var int
+     */
+    private $owner;
+
+    /**
+     * @var string
+     */
+    private $status;
+}

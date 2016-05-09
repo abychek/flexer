@@ -1,0 +1,4 @@
+services:
+#    api_employee.example:
+#        class: Api\EmployeeBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]
