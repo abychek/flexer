@@ -1,7 +1,6 @@
 <?php
 
-
-namespace AppBundle\Entity;
+namespace Authentication\RegistrationBundle\Entity;
 
 
 use Serializable;
@@ -30,27 +29,9 @@ class User implements UserInterface, Serializable
     private $password;
 
     /**
-     * @var string
+     * @var array
      */
     private $role;
-
-    /**
-     * User constructor.
-     * @param int $id
-     * @param string $username
-     * @param string $name
-     * @param string $password
-     * @param string $role
-     */
-    public function __construct($id, $username, $name, $password, $role)
-    {
-        $this->id = $id;
-        $this->username = $username;
-        $this->name = $name;
-        $this->password = $password;
-        $this->role = $role;
-    }
-
 
     /**
      * Returns the roles granted to the user.
@@ -68,7 +49,7 @@ class User implements UserInterface, Serializable
      *
      * @return (Role|string)[] The user roles
      */
-    public function getRoles() : string
+    public function getRoles() : array
     {
         return $this->role;
     }
@@ -149,5 +130,95 @@ class User implements UserInterface, Serializable
             $this->username,
             $this->password,
             ) = unserialize($serialized);
+    }
+
+    /**
+     * Set username
+     *
+     * @param string $username
+     *
+     * @return User
+     */
+    public function setUsername($username)
+    {
+        $this->username = $username;
+
+        return $this;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     *
+     * @return User
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set password
+     *
+     * @param string $password
+     *
+     * @return User
+     */
+    public function setPassword($password)
+    {
+        $this->password = $password;
+
+        return $this;
+    }
+
+    /**
+     * Set role
+     *
+     * @param string $roles
+     *
+     * @return User
+     */
+    public function setRoles($roles)
+    {
+        $this->role = $roles;
+
+        return $this;
+    }
+
+    /**
+     * Add role for user
+     *
+     * @param string $role
+     *
+     * @return $this
+     */
+    public function addRole($role)
+    {
+        $this->role[] = $role;
+
+        return $this;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
     }
 }
