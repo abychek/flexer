@@ -1,0 +1,32 @@
+<?php
+
+namespace Api\CustomerBundle\Entity;
+
+
+class Establishment
+{
+    /**
+     * @var int
+     */
+    private $id;
+
+    /**
+     * @var string
+     */
+    private $title;
+
+    /**
+     * @var string
+     */
+    private $description;
+
+    /**
+     * @var string
+     */
+    private $status;
+
+    /**
+     * @var User
+     */
+    private $owner;
+}
