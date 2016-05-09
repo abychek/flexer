@@ -1,0 +1,22 @@
+<?php
+
+namespace Api\EmployeeBundle\Entity;
+
+
+class Worker
+{
+    /**
+     * @var int
+     */
+    private $id;
+
+    /**
+     * @var int
+     */
+    private $user;
+
+    /**
+     * @var int
+     */
+    private $establishment;
+}

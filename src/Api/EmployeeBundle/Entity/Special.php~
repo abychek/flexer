@@ -1,0 +1,54 @@
+<?php
+
+namespace Api\EmployeeBundle\Entity;
+
+
+use DateTime;
+
+class Special
+{
+    /**
+     * @var int
+     */
+    private $id;
+
+    /**
+     * @var string
+     */
+    private $title;
+
+    /**
+     * @var string
+     */
+    private $description;
+
+    /**
+     * @var DateTime
+     */
+    private $start;
+
+    /**
+     * @var DateTime
+     */
+    private $end;
+
+    /**
+     * @var string
+     */
+    private $type;
+
+    /**
+     * @var int
+     */
+    private $establishment;
+
+    /**
+     * @var int
+     */
+    private $count;
+
+    /**
+     * @var string
+     */
+    private $status;
+}

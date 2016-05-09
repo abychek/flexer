@@ -72,10 +72,10 @@ class Version20160429164239 extends AbstractMigration
         $table->addColumn('description', Type::TEXT, [
             'notnull' => false
         ]);
-        $table->addColumn('start', Type::DATE, [
+        $table->addColumn('start_date', Type::DATE, [
             'notnull' => true,
         ]);
-        $table->addColumn('end', Type::DATE, [
+        $table->addColumn('end_date', Type::DATE, [
             'notnull' => true,
         ]);
         $table->addColumn('type', Type::STRING, [
@@ -101,10 +101,10 @@ class Version20160429164239 extends AbstractMigration
             'notnull'       => true
         ]);
         $table->setPrimaryKey(['id']);
-        $table->addColumn('worker_id', Type::INTEGER, [
+        $table->addColumn('user_id', Type::INTEGER, [
             'notnull' => true
         ]);
-        $table->addForeignKeyConstraint('users', ['worker_id'], ['id']);
+        $table->addForeignKeyConstraint('users', ['user_id'], ['id']);
         $table->addColumn('establishment_id', Type::INTEGER, [
             'notnull' => true
         ]);

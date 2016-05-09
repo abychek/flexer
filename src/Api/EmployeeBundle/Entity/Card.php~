@@ -1,0 +1,27 @@
+<?php
+
+namespace Api\EmployeeBundle\Entity;
+
+
+class Card
+{
+    /**
+     * @var
+     */
+    private $id;
+
+    /**
+     * @var int
+     */
+    private $customerId;
+
+    /**
+     * @var int
+     */
+    private $specialId;
+
+    /**
+     * @var int
+     */
+    private $count;
+}

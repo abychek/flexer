@@ -1,3 +1,7 @@
+api_employee:
+    resource: "@ApiEmployeeBundle/Resources/config/routing.yml"
+    prefix:   /api-employee
+
 authentication_registration:
     resource: "@AuthenticationRegistrationBundle/Resources/config/routing.yml"
     prefix:   /auth
@@ -12,8 +16,3 @@ homepage:
 admin:
     path:      /admin
     defaults:  { _controller: AppBundle:Default:admin }
-
-registration:
-    path: /registration
-    defaults:  { _controller: AppBundle:Authentication:registration }
-    methods:  [POST]
