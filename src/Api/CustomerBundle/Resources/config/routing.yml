@@ -1,0 +1,3 @@
+api_customer_homepage:
+    path:     /
+    defaults: { _controller: ApiCustomerBundle:Default:index }

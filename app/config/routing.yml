@@ -1,3 +1,7 @@
+api_customer:
+    resource: "@ApiCustomerBundle/Resources/config/routing.yml"
+    prefix:   /
+
 api_employee:
     resource: "@ApiEmployeeBundle/Resources/config/routing.yml"
     prefix:   /api-employee
