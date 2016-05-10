@@ -20,6 +20,7 @@ class AppKernel extends Kernel
             new Authentication\RegistrationBundle\AuthenticationRegistrationBundle(),
             new Api\EmployeeBundle\ApiEmployeeBundle(),
             new Api\CustomerBundle\ApiCustomerBundle(),
+            new Authentication\AuthorizationBundle\AuthenticationAuthorizationBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

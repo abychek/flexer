@@ -1,3 +1,7 @@
+authentication_authorization:
+    resource: "@AuthenticationAuthorizationBundle/Resources/config/routing.yml"
+    prefix:   /auth
+
 api_customer:
     resource: "@ApiCustomerBundle/Resources/config/routing.yml"
     prefix:   /
