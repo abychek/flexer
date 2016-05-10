@@ -30,8 +30,9 @@ security:
             provider: our_db_provider
 
     access_control:
-        - { path: ^/admin, roles: ROLE_CUSTOMER }
+        - { path: ^/login, roles: [ROLE_CUSTOMER, ROLE_EMPLOYEE] }
         - { path: ^/api-employee, roles: ROLE_EMPLOYEE }
+        - { path: ^/api-customer, roles: ROLE_CUSTOMER }
             # activate different ways to authenticate
 
             # http_basic: ~

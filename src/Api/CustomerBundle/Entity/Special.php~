@@ -1,0 +1,52 @@
+<?php
+
+namespace Api\CustomerBundle\Entity;
+
+
+class Special
+{
+    /**
+     * @var int
+     */
+    private $id;
+
+    /**
+     * @var string
+     */
+    private $title;
+
+    /**
+     * @var string
+     */
+    private $description;
+
+    /**
+     * @var \DateTime
+     */
+    private $startDate;
+    
+    /**
+     * @var \DateTime
+     */
+    private $endDate;
+
+    /**
+     * @var string
+     */
+    private $status;
+
+    /**
+     * @var string
+     */
+    private $type;
+
+    /**
+     * @var int
+     */
+    private $count;
+
+    /**
+     * @var Establishment
+     */
+    private $establishment;
+}

@@ -1,0 +1,32 @@
+<?php
+
+namespace Api\CustomerBundle\Entity;
+
+
+class User
+{
+    /**
+     * @var int
+     */
+    private $id;
+
+    /**
+     * @var string
+     */
+    private $name;
+
+    /**
+     * @var string
+     */
+    private $username;
+
+    /**
+     * @var string
+     */
+    private $password;
+
+    /**
+     * @var array
+     */
+    private $role;
+}
