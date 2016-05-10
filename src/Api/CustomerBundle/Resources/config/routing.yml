@@ -1,3 +1,4 @@
 api_customer_homepage:
-    path:     /
-    defaults: { _controller: ApiCustomerBundle:Default:index }
+    path:     /users/{id}
+    defaults: { _controller: ApiCustomerBundle:Users:user }
+    methods: [GET]

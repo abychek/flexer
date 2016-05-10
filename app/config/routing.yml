@@ -4,11 +4,11 @@ authentication_authorization:
 
 api_customer:
     resource: "@ApiCustomerBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /customer-api
 
 api_employee:
     resource: "@ApiEmployeeBundle/Resources/config/routing.yml"
-    prefix:   /api-employee
+    prefix:   /employee-api
 
 authentication_registration:
     resource: "@AuthenticationRegistrationBundle/Resources/config/routing.yml"
