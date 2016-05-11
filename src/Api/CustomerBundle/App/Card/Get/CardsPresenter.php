@@ -19,8 +19,6 @@ class CardsPresenter
                 'id' => $card->getId(),
                 'title' => $card->getSpecial()->getTitle(),
                 'description' => $card->getSpecial()->getDescription(),
-                'needed_count' => $card->getSpecial()->getCount(),
-                'used_count' => $card->getUsesCount()
             ];
         }
         return json_encode($response);

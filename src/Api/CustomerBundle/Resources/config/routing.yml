@@ -1,4 +1,12 @@
-api_customer_homepage:
+api_customer_user:
     path:     /users/{id}
     defaults: { _controller: ApiCustomerBundle:Users:user }
+    methods: [GET]
+api_customer_user_cards:
+    path:     /users/{id}/cards
+    defaults: { _controller: ApiCustomerBundle:Cards:cards }
+    methods: [GET]
+api_customer_user_card:
+    path:     /users/{customerId}/cards/{cardId}
+    defaults: { _controller: ApiCustomerBundle:Cards:card }
     methods: [GET]
