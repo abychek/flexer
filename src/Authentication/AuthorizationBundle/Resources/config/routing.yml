@@ -1,3 +1,3 @@
-authentication_authorization_homepage:
+authentication_authorization:
     path:     /login
     defaults: { _controller: AuthenticationAuthorizationBundle:Default:login }
