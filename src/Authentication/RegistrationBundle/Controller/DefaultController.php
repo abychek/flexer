@@ -32,7 +32,12 @@ class DefaultController extends Controller
                 $em = $this->getDoctrine()->getEntityManager();
                 $em->persist($user);
                 $em->flush();
-                return new Response('Success', Response::HTTP_OK);
+
+                $response = [
+                    'message' => 'Success',
+                    'id'      => $user->getId()
+                ];
+                return new Response(json_encode($response), Response::HTTP_OK);
             } else {
                 throw new Exception();
             }
