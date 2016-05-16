@@ -1,6 +1,8 @@
 Authentication\RegistrationBundle\Entity\User:
     properties:
         username:
+            - NotBlank:
+                message: 'Username is required.'
             - Length:
                 min: 4
                 max: 20
@@ -12,6 +14,8 @@ Authentication\RegistrationBundle\Entity\User:
                 message: 'Your username must be 0-9, A-Z, a-z characters'
 
         name:
+            - NotBlank:
+                message: 'Name is required.'
             - Length:
                 min: 2
                 max: 50
@@ -23,6 +27,8 @@ Authentication\RegistrationBundle\Entity\User:
                 message: 'Your name must be 0-9, A-Z, a-z, А-Я, а-я characters'
 
         password:
+            - NotBlank:
+                message: 'Password is required.'
             - Length:
                 min: 8
                 max: 20

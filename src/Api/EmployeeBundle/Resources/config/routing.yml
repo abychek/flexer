@@ -1,4 +1,4 @@
 change_card:
     path:     /cards/{id}
     defaults: { _controller: ApiEmployeeBundle:Default:changeCard }
-    methods: [PATCH]
+    methods: [PUT]
