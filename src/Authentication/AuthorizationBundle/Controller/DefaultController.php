@@ -10,7 +10,8 @@ class DefaultController extends Controller
     public function loginAction()
     {
         $message = [
-            'success' => 'success'
+            'success' => 'success',
+            'id'      => $this->getUser()->getId()
         ];
         return new Response(json_encode($message), Response::HTTP_OK);
     }
