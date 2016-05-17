@@ -31,8 +31,9 @@ class DefaultController extends Controller
                 $actual = $card->getUsesCount();
 
                 $response = [
-                    'needed' => $needed,
-                    'actual' => $actual
+                    'success' => 'success',
+                    'needed'  => $needed,
+                    'actual'  => $actual
                 ];
                 return new Response(json_encode($response), Response::HTTP_OK);
             } else {
