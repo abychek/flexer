@@ -13,8 +13,7 @@ class DefaultController extends Controller
     {
         try{
             $card = $this->getDoctrine()->getRepository('ApiEmployeeBundle:Card')->findOneBy(['id' => $id]);
-            if ($card !== null){
-
+            if ($card !== null) {
                 $id = $this->getUser()->getId();
                 if (!$this->isWorker($id, $card->getSpecial()->getEstablishment()->getId()))
                 {
@@ -22,13 +21,16 @@ class DefaultController extends Controller
                 }
 
                 $needed = $card->getSpecial()->getCount();
-                $actual = $request->get('count');
+                $actual = json_decode($request->getContent(), true)['count'];
                 if ($needed < $actual ) {
                     return new Response('Get bonus.', Response::HTTP_BAD_REQUEST);
                 }
-                $card->setUsesCount($request->get('count'));
+                $card->setUsesCount($actual);
 
                 $actual = $card->getUsesCount();
+                $em = $this->getDoctrine()->getEntityManager();
+                $em->persist($card);
+                $em->flush();
 
                 $response = [
                     'success' => 'success',
@@ -40,7 +42,7 @@ class DefaultController extends Controller
                 throw new Exception();
             }
         } catch (Exception $e) {
-            return new Response('Something wrong.', Response::HTTP_NOT_FOUND);
+            return new Response($e->getMessage(), Response::HTTP_FOUND);
         }
     }
 
@@ -55,6 +57,6 @@ class DefaultController extends Controller
         return $this->getDoctrine()->getRepository('ApiEmployeeBundle:Worker')->findOneBy([
             'user' => $workerId,
             'establishment' => $establishmentId
-        ]) !== null;
+        ]) === null;
     }
 }

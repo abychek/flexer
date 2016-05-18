@@ -11,12 +11,12 @@ class Card
     private $id;
 
     /**
-     * @var int
+     * @var User
      */
     private $customer;
 
     /**
-     * @var int
+     * @var Special
      */
     private $special;
 
@@ -25,8 +25,9 @@ class Card
      */
     private $usesCount;
 
+
     /**
-     * Set count
+     * Set usesCount
      *
      * @param integer $usesCount
      *
@@ -40,7 +41,7 @@ class Card
     }
 
     /**
-     * Get count
+     * Get usesCount
      *
      * @return integer
      */
@@ -60,23 +61,23 @@ class Card
     }
 
     /**
-     * Set customerId
+     * Set customer
      *
-     * @param User $user
+     * @param \Api\EmployeeBundle\Entity\User $customer
      *
      * @return Card
      */
-    public function setCustomer(User $user = null)
+    public function setCustomer(\Api\EmployeeBundle\Entity\User $customer = null)
     {
-        $this->customer = $user;
+        $this->customer = $customer;
 
         return $this;
     }
 
     /**
-     * Get customerId
+     * Get customer
      *
-     * @return User
+     * @return \Api\EmployeeBundle\Entity\User
      */
     public function getCustomer()
     {
@@ -84,13 +85,13 @@ class Card
     }
 
     /**
-     * Set specialId
+     * Set special
      *
-     * @param Special $special
+     * @param \Api\EmployeeBundle\Entity\Special $special
      *
      * @return Card
      */
-    public function setSpecial(Special $special = null)
+    public function setSpecial(\Api\EmployeeBundle\Entity\Special $special = null)
     {
         $this->special = $special;
 
@@ -98,9 +99,9 @@ class Card
     }
 
     /**
-     * Get specialId
+     * Get special
      *
-     * @return Special
+     * @return \Api\EmployeeBundle\Entity\Special
      */
     public function getSpecial()
     {
