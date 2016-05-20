@@ -8,7 +8,7 @@
         <id name="id" type="integer">
             <generator strategy="AUTO" />
         </id>
-        <field name="usesCount" type="integer" />
+        <field name="usesCount" type="integer" column="uses_count" />
         <many-to-one target-entity="User" field="customer" />
         <many-to-one target-entity="Special" field="special" />
     </entity>

@@ -11,17 +11,18 @@ class Card
     private $id;
 
     /**
-     * @var int
+     * @var User
      */
-    private $customerId;
+    private $customer;
+
+    /**
+     * @var Special
+     */
+    private $special;
 
     /**
      * @var int
      */
-    private $specialId;
+    private $usesCount;
 
-    /**
-     * @var int
-     */
-    private $count;
 }

@@ -10,3 +10,19 @@ api_customer_user_card:
     path:     /users/{customerId}/cards/{cardId}
     defaults: { _controller: ApiCustomerBundle:Cards:card }
     methods: [GET]
+api_customer_establishments:
+    path:     /establishments
+    defaults: { _controller: ApiCustomerBundle:Establishments:establishments }
+    methods: [GET]
+api_customer_specials:
+    path:     /establishments/{id}/specials
+    defaults: { _controller: ApiCustomerBundle:Specials:specials }
+    methods: [GET]
+api_customer_concrete_special:
+    path:     /specials/{id}
+    defaults: { _controller: ApiCustomerBundle:Specials:special }
+    methods: [GET]
+api_customer_register_card:
+    path:     /cards
+    defaults: { _controller: ApiCustomerBundle:Cards:registerNewCard }
+    methods: [POST]
