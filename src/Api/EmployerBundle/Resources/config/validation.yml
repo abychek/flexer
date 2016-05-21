@@ -1,0 +1,59 @@
+Api\EmployerBundle\Entity\Establishment:
+    properties:
+        title:
+            - NotBlank:
+                message: 'Title is required.'
+            - Length:
+                min: 4
+                max: 40
+                minMessage: 'Title must be at least {{ limit }} characters long'
+                maxMessage: 'Title cannot be longer than {{ limit }} characters'
+
+            - Regex:
+                pattern: '/[0-9A-Za-z-А-Яа-яёЁ ]/'
+                message: 'Title must be 0-9, A-Z, a-z, А-Я, а-я characters'
+
+        description:
+            - NotBlank:
+                message: 'Description is required.'
+            - Length:
+                min: 10
+                max: 255
+                minMessage: 'Description must be at least {{ limit }} characters long'
+                maxMessage: 'Description cannot be longer than {{ limit }} characters'
+
+            - Regex:
+                pattern: '/[0-9A-Za-zА-Яа-яёЁ -]/'
+                message: 'Description must be 0-9, A-Z, a-z, А-Я, а-я characters'
+
+Api\EmployerBundle\Entity\Special:
+    properties:
+        title:
+            - NotBlank:
+                message: 'Title is required.'
+            - Length:
+                min: 4
+                max: 40
+                minMessage: 'Title must be at least {{ limit }} characters long'
+                maxMessage: 'Title cannot be longer than {{ limit }} characters'
+
+            - Regex:
+                pattern: '/[0-9A-Za-z-А-Яа-яёЁ ]/'
+                message: 'Title must be 0-9, A-Z, a-z, А-Я, а-я characters'
+
+        description:
+            - NotBlank:
+                message: 'Description is required.'
+            - Length:
+                min: 10
+                max: 255
+                minMessage: 'Description must be at least {{ limit }} characters long'
+                maxMessage: 'Description cannot be longer than {{ limit }} characters'
+
+            - Regex:
+                pattern: '/[0-9A-Za-zА-Яа-яёЁ -]/'
+                message: 'Description must be 0-9, A-Z, a-z, А-Я, а-я characters'
+
+        count:
+            - NotBlank:
+                message: 'Count is required.'

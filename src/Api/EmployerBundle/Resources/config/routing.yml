@@ -1,0 +1,36 @@
+api_employer_users:
+    path:     /users
+    defaults: { _controller: ApiEmployerBundle:Users:users }
+    methods:  [GET]
+api_employer_user_establishments:
+    path:     /users/{id}/establishments
+    defaults: { _controller: ApiEmployerBundle:Users:userEstablishments }
+    methods:  [GET]
+api_employer_concrete_establishment:
+    path:     /establishments/{id}
+    defaults: { _controller: ApiEmployerBundle:Establishments:concreteEstablishment }
+    methods:  [GET]
+api_employer_register_establishment:
+    path:     /establishments
+    defaults: { _controller: ApiEmployerBundle:Establishments:registerEstablishment }
+    methods:  [POST]
+api_employer_register_special:
+    path:     /establishments/{id}/specials
+    defaults: { _controller: ApiEmployerBundle:Specials:registerSpecial }
+    methods:  [POST]
+api_employer_workers:
+    path:     /establishments/{id}/workers
+    defaults: { _controller: ApiEmployerBundle:Workers:workers }
+    methods:  [GET]
+api_employer_worker:
+    path:     /establishments/{establishmentId}/workers/{workerId}
+    defaults: { _controller: ApiEmployerBundle:Workers:worker }
+    methods:  [GET]
+api_employer_change_worker:
+    path:     /establishments/{establishmentId}/workers/{workerId}
+    defaults: { _controller: ApiEmployerBundle:Workers:change }
+    methods:  [PATCH]
+api_employer_hire_worker:
+    path:     /establishments/{id}/workers
+    defaults: { _controller: ApiEmployerBundle:Workers:hire }
+    methods:  [POST]

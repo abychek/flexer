@@ -22,7 +22,7 @@ class DefaultController extends Controller
 
                 $needed = $card->getSpecial()->getCount();
                 $actual = json_decode($request->getContent(), true)['count'];
-                if ($needed < $actual ) {
+                if ($needed < $actual) {
                     return new Response('Get bonus.', Response::HTTP_BAD_REQUEST);
                 }
                 $card->setUsesCount($actual);
@@ -35,14 +35,15 @@ class DefaultController extends Controller
                 $response = [
                     'success' => 'success',
                     'needed'  => $needed,
-                    'actual'  => $actual
+                    'actual'  => $actual,
+                    'cardId'  => $card->getId()
                 ];
                 return new Response(json_encode($response), Response::HTTP_OK);
             } else {
                 throw new Exception();
             }
         } catch (Exception $e) {
-            return new Response($e->getMessage(), Response::HTTP_FOUND);
+            return new Response($e->getMessage(), Response::HTTP_NOT_FOUND);
         }
     }
 
@@ -56,7 +57,8 @@ class DefaultController extends Controller
     {
         return $this->getDoctrine()->getRepository('ApiEmployeeBundle:Worker')->findOneBy([
             'user' => $workerId,
-            'establishment' => $establishmentId
+            'establishment' => $establishmentId,
+            'status' => 'worked'
         ]) === null;
     }
 }
