@@ -41,6 +41,7 @@ class CardsFixtures implements FixtureInterface
         $worker = new Worker();
         $worker->setUser($owner);
         $worker->setEstablishment($establishment);
+        $worker->setStatus('worked');
         $manager->persist($worker);
         $manager->flush();
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Api\EmployeeBundle\Entity;
+namespace Api\EmployerBundle\Entity;
 
 
 class Worker
@@ -62,11 +62,11 @@ class Worker
     /**
      * Set user
      *
-     * @param \Api\EmployeeBundle\Entity\User $user
+     * @param \Api\EmployerBundle\Entity\User $user
      *
      * @return Worker
      */
-    public function setUser(\Api\EmployeeBundle\Entity\User $user = null)
+    public function setUser(\Api\EmployerBundle\Entity\User $user = null)
     {
         $this->user = $user;
 
@@ -76,7 +76,7 @@ class Worker
     /**
      * Get user
      *
-     * @return \Api\EmployeeBundle\Entity\User
+     * @return \Api\EmployerBundle\Entity\User
      */
     public function getUser()
     {
@@ -86,11 +86,11 @@ class Worker
     /**
      * Set establishment
      *
-     * @param \Api\EmployeeBundle\Entity\Establishment $establishment
+     * @param \Api\EmployerBundle\Entity\Establishment $establishment
      *
      * @return Worker
      */
-    public function setEstablishment(\Api\EmployeeBundle\Entity\Establishment $establishment = null)
+    public function setEstablishment(\Api\EmployerBundle\Entity\Establishment $establishment = null)
     {
         $this->establishment = $establishment;
 
@@ -100,7 +100,7 @@ class Worker
     /**
      * Get establishment
      *
-     * @return \Api\EmployeeBundle\Entity\Establishment
+     * @return \Api\EmployerBundle\Entity\Establishment
      */
     public function getEstablishment()
     {

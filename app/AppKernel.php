@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new Api\EmployeeBundle\ApiEmployeeBundle(),
             new Api\CustomerBundle\ApiCustomerBundle(),
             new Authentication\AuthorizationBundle\AuthenticationAuthorizationBundle(),
+            new Api\EmployerBundle\ApiEmployerBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

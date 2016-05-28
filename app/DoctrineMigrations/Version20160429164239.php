@@ -101,6 +101,10 @@ class Version20160429164239 extends AbstractMigration
             'notnull'       => true
         ]);
         $table->setPrimaryKey(['id']);
+        $table->addColumn('status', Type::STRING, [
+            'notnull' => true,
+            'default' => 'worked'
+        ]);
         $table->addColumn('user_id', Type::INTEGER, [
             'notnull' => true
         ]);
@@ -154,7 +158,7 @@ class Version20160429164239 extends AbstractMigration
         $schema->dropTable('customers_specials');
         // Drop Departments Table
         $schema->dropTable('departments');
-        // Drop Workers Table
+        // Drop Worker Table
         $schema->dropTable('workers');
         // Drop Specials Table
         $schema->dropTable('specials');
