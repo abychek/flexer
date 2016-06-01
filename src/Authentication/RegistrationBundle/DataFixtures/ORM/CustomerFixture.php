@@ -18,7 +18,7 @@ class CustomerFixture implements FixtureInterface
     public function load(ObjectManager $manager)
     {
         $user = new User();
-        $user->setName('alexey');
+        $user->setName('Alexey Bychek');
         $user->setUsername('vivaldiy');
         $user->setPassword('q12we34r');
         $user->setRoles(['ROLE_CUSTOMER']);
