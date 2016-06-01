@@ -22,17 +22,17 @@ class CardsFixtures implements FixtureInterface
      */
     public function load(ObjectManager $manager)
     {
-        $user = $this->createUser('alex', 'qazxsw', 'qwertyui', ['ROLE_CUSTOMER']);
+        $user = $this->createUser('Jeff Verdinski', 'jeff1', 'qwertyui', ['ROLE_CUSTOMER']);
         $manager->persist($user);
         $manager->flush();
 
-        $owner = $this->createUser('owner', 'marina', 'qwertyui', ['ROLE_CUSTOMER', 'ROLE_EMPLOYER', 'ROLE_EMPLOYEE']);
+        $owner = $this->createUser('Марина Чудо', 'marina', 'qwertyui', ['ROLE_CUSTOMER', 'ROLE_EMPLOYER', 'ROLE_EMPLOYEE']);
         $manager->persist($owner);
         $manager->flush();
 
         $establishment = new Establishment();
-        $establishment->setTitle('kylinu');
-        $establishment->setDescription('kylinu kylinu');
+        $establishment->setTitle('Maryland');
+        $establishment->setDescription('Biggest coffee network in the world.');
         $establishment->setOwner($owner);
         $establishment->setStatus('approved');
         $manager->persist($establishment);
@@ -46,11 +46,11 @@ class CardsFixtures implements FixtureInterface
         $manager->flush();
 
         $special = new Special();
-        $special->setTitle('kupi 2 poluchi 1');
-        $special->setDescription('bla bla');
+        $special->setTitle('Бесплатный кофе');
+        $special->setDescription('Купи 5 чашек кофе и получи 1 бесплатно.');
         $special->setType('quest');
         $special->setStartDate(new DateTime('now'));
-        $special->setEndDate(new DateTime('+1 week'));
+        $special->setEndDate(new DateTime('+20 week'));
         $special->setStatus('approved');
         $special->setCount(5);
         $special->setEstablishment($establishment);

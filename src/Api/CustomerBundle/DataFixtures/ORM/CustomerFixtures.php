@@ -21,29 +21,29 @@ class CustomerFixtures implements FixtureInterface
      */
     public function load(ObjectManager $manager)
     {
-        $customer = $this->createUser('alex', 'xualex', 'qwertyui', ['ROLE_CUSTOMER']);
+        $customer = $this->createUser('Vlad Koblat', 'vlad1', 'qwertyui', ['ROLE_CUSTOMER']);
         $manager->persist($customer);
         $manager->flush();
-        $owner = $this->createUser('marina', 'xmarina', 'qwertyui', ['ROLE_CUSTOMER', 'ROLE_EMPLOYER']);
+        $owner = $this->createUser('Ann Jonson', 'ann1', 'qwertyui', ['ROLE_CUSTOMER', 'ROLE_EMPLOYER']);
         $manager->persist($owner);
         $manager->flush();
 
         $establishment = new Establishment();
-        $establishment->setTitle('mak');
-        $establishment->setDescription('donalds');
+        $establishment->setTitle('Mac Doonalds');
+        $establishment->setDescription('The biggest fastfood network.');
         $establishment->setOwner($owner);
         $establishment->setStatus('approved');
         $manager->persist($establishment);
         $manager->flush();
 
         $special = new Special();
-        $special->setTitle('kupi 2 poluchi 1');
-        $special->setDescription('bla bla');
+        $special->setTitle('Burger Rain');
+        $special->setDescription('Buy 2 burgers and get 1 for free');
         $special->setType('quest');
         $special->setStartDate(new DateTime('now'));
-        $special->setEndDate(new DateTime('+1 week'));
+        $special->setEndDate(new DateTime('+2 week'));
         $special->setStatus('approved');
-        $special->setCount(5);
+        $special->setCount(2);
         $special->setEstablishment($establishment);
         $manager->persist($special);
         $manager->flush();
